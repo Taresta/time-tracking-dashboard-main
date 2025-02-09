@@ -1,0 +1,162 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", serif;
+  font-size: clamp(13px, 13px + 1vw, 18px);
+  font-weight: 300;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  padding: 1em;
+  min-height: 100vh;
+  background-color: hsl(226, 43%, 10%);
+  color: hsl(236, 100%, 87%);
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 1.25rem + 1vw, 1.5rem);
+  font-weight: 300;
+  color: white;
+}
+
+.user-info-nav-container {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.user-info-nav-container .user-info-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: hsl(246, 80%, 60%);
+  padding: 1.5em;
+  border-radius: 10px;
+}
+.user-info-nav-container .user-info-container img {
+  width: clamp(2rem, 2rem + 1vw, 3rem);
+  aspect-ratio: 1/1;
+  border: 1.5px solid white;
+  border-radius: 50%;
+}
+.user-info-nav-container .buttons-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1em;
+}
+.user-info-nav-container .buttons-container .btn {
+  font-size: clamp(13px, 13px + 1vw, 18px);
+  border: none;
+  background-color: hsl(235, 46%, 20%);
+  color: hsl(235, 45%, 61%);
+}
+.user-info-nav-container .buttons-container .btn.active, .user-info-nav-container .buttons-container .btn:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.time-tracking-cards-container {
+  display: grid;
+  gap: 1rem;
+}
+.time-tracking-cards-container article {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.time-tracking-cards-container article[data-activity-type=Work] {
+  background-color: hsl(15, 100%, 70%);
+}
+.time-tracking-cards-container article[data-activity-type=Play] {
+  background-color: hsl(195, 74%, 62%);
+}
+.time-tracking-cards-container article[data-activity-type=Study] {
+  background-color: hsl(348, 100%, 68%);
+}
+.time-tracking-cards-container article[data-activity-type=Exercise] {
+  background-color: hsl(145, 58%, 55%);
+}
+.time-tracking-cards-container article[data-activity-type=Social] {
+  background-color: hsl(264, 64%, 52%);
+}
+.time-tracking-cards-container article[data-activity-type="Self Care"] {
+  background-color: hsl(43, 84%, 65%);
+}
+.time-tracking-cards-container article svg.activity-icon {
+  height: 4rem;
+  margin: -10px 10px -20px auto;
+}
+.time-tracking-cards-container article div.activity-card {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 0.5rem + 1vw, 0.8rem);
+  background-color: hsl(235, 46%, 20%);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.time-tracking-cards-container article div.activity-card div.activity-info,
+.time-tracking-cards-container article div.activity-card div.activity-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.time-tracking-cards-container article div.activity-card div.activity-info p.activity-name,
+.time-tracking-cards-container article div.activity-card div.activity-time p.activity-name {
+  font-weight: 400;
+  color: white;
+}
+.time-tracking-cards-container article div.activity-card div.activity-info svg:hover,
+.time-tracking-cards-container article div.activity-card div.activity-time svg:hover {
+  cursor: pointer;
+}
+.time-tracking-cards-container article div.activity-card div.activity-info .previous-time,
+.time-tracking-cards-container article div.activity-card div.activity-time .previous-time {
+  font-size: clamp(11px, 11px + 0.3vw, 13px);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: 1fr 3fr;
+  }
+  .user-info-nav-container .user-info-container {
+    flex-direction: column;
+  }
+  .user-info-nav-container .buttons-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .time-tracking-cards-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .time-tracking-cards-container article div.activity-card div.activity-time {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(0.5rem, 0.5rem + 1vw, 0.8rem);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
