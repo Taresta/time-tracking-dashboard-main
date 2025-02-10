@@ -2,7 +2,7 @@
 let data;
 let buttonList  = document.querySelectorAll('button');
 async function fetchData() {
-    const requestURL = "/data.json";
+    const requestURL = "data.json";
     const request = new Request(requestURL);
 
     const response = await fetch(request);
@@ -44,8 +44,6 @@ function handleButtonStyle(e) {
 }
 function populateDOM(activityData, timeframe = "daily") {
     //Now, we just need to make the HTML elements with this data
-    //Fun Fun and super fun
-
     //Let us grab the section first that contains the articles
     const cardsContainer = document.querySelector('.time-tracking-cards-container');
     cardsContainer.innerHTML= '';
