@@ -2,7 +2,7 @@
 let data;
 let buttonList  = document.querySelectorAll('button');
 async function fetchData() {
-    const requestURL = "../data.json";
+    const requestURL = "/data.json";
     const request = new Request(requestURL);
 
     const response = await fetch(request);
